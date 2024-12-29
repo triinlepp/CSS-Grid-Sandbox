@@ -1,0 +1,118 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: #fff;
+    display: grid;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Rubik Spray Paint", serif;
+    font-size: x-large;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.8fr 0.8fr 0.8fr 0.7fr;
+    grid-template-areas:
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+    height: 100vh;
+}
+
+.banner {
+    align-items: center;
+    background-color: rgb(255, 140, 0);
+    display: grid;
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+.header {
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    background-color: rgb(142, 165, 219);
+    display: grid;
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    background-color: rgb(222, 205, 226);
+    display: grid;
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.menu {
+    align-items: center;
+    background-color: rgb(255, 0, 0);
+    display: grid;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.main {
+    align-items: center;
+    background-color: rgb(114, 28, 0);
+    display: grid;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    background-color: rgb(70, 194, 70);
+    display: grid;
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px)  {
+
+    .container {
+        grid-template-columns: 0.6fr 1fr 0.7fr;
+        grid-template-rows: 0.4fr 1fr 1.5fr 0.8fr 0.8fr;
+        grid-template-areas: 
+            "header header header"
+            "hero hero hero"
+            "menu main main"
+            "menu banner banner"
+            "menu extra image"
+        ;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        gap: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.7fr 1.2fr 1.6fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
